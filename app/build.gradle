@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    
+    defaultConfig {
+        applicationId "de.k3b.android.camerafolder"
+        // Android 4.4 (api19)
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "debug_title", ""
+
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-DEBUG"
+            resValue "string", "debug_title", "DEBUG-" + getDate()
+        }
+    }
+    lintOptions {
+        // http://stackoverflow.com/questions/31350350/generating-signed-apk-error7-missingtranslation-in-build-generated-res-gen
+        // MissingTranslation : not all crowdwin translations are complete so ignore them
+        // ValidFragment : local (dialog-)fragment class for customized direcotry picker is fragile but on rotation code makes shure that dialog is closed.
+        // disable 'MissingTranslation','ValidFragment', 'ContentDescription', 'AndroidLintPluralsCandidate', 'AndroidLintRtlHardcoded'
+        // disable 'MissingTranslation','ValidFragment', 'ContentDescription', 'ExpiredTargetSdkVersion'
+        disable 'MissingTranslation','ContentDescription', 'ExpiredTargetSdkVersion'
+
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core:1.3.2'
+}
+
+
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd-HH:mm')
+    return formattedDate
+}
+

@@ -1,0 +1,6 @@
+When "Camera Folder" is installed many Android-Apps that can open
+jpg files can also take a photo from camera.
+
+Note that "Camera Folder" has no userinterface and no starticon of its own.
+
+The app is super tiny: 0,16 MB
