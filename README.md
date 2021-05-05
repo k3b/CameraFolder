@@ -30,8 +30,8 @@ Inside the drawing app [Simple-Draw](https://github.com/SimpleMobileTools/Simple
 * Android-4.4 (api 19) or later with camera hardware.
 * At least one Camera app must be installed (i.e. [Open Camera](https://f-droid.org/en/packages/net.sourceforge.opencamera))
 * Required Permissions:  
-** CAMERA needed to ask a camera app to take a photo
-** WRITE_EXTERNAL_STORAGE to save the photo to a file
+  * CAMERA needed to ask a camera app to take a photo
+  * WRITE_EXTERNAL_STORAGE to save the photo to a file
 
 ## Technical details
 
