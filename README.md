@@ -1,4 +1,4 @@
-# ![](https://raw.githubusercontent.com/k3b/APhotoManager/master/app/src/main/res/drawable/camera_folder.png) Camera Folder: "Take a Photo from Camera" everywhere where you can open a photo file 
+# ![](https://github.com/k3b/CameraFolder/raw/master/app/src/main/res/drawable/camera_folder.png) Camera Folder: "Take a Photo from Camera" everywhere where you can open a photo file 
 
 When "Camera Folder" is installed many Android-Apps that can open jpg files can also take a photo from camera.
 
@@ -11,7 +11,7 @@ The app is super tiny: 0,16 MB
 Inside the drawing app [Simple-Draw](https://github.com/SimpleMobileTools/Simple-Draw) 
 "open" a photo from [Open Camera](https://f-droid.org/en/packages/net.sourceforge.opencamera) app.
 
-![](https://raw.githubusercontent.com/k3b/APhotoManager/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1-workflow.png)
+![](https://github.com/k3b/CameraFolder/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1-workflow.png)
 
 * (0) open the app "Simple-Draw"
 * (1) Open Menu
