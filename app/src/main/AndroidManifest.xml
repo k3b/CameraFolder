@@ -26,7 +26,8 @@
                 android:resource="@xml/file_provider_paths"/>
         </provider>
 
-        <activity android:name=".GetDocument2CameraActivity" >
+        <activity android:name=".GetDocument2CameraActivity"
+            android:label="@string/label_select_picture" >
             <intent-filter>
                 <action android:name="android.intent.action.PICK" />
                 <action android:name="android.intent.action.GET_CONTENT" />
