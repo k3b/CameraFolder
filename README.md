@@ -17,8 +17,8 @@ Inside the drawing app [Simple-Draw](https://github.com/SimpleMobileTools/Simple
 * (1) Open Menu
 * (2) Coose "Open file"
 * The Android-System-File-Chooser opens.
-* (4) Choose Hamburger Menu
-* The Provider View opens
+* (3) Choose Hamburger Menu
+* (4) The Provider View opens
 * (5) In the Provider View choose "Camera Folder"
 * The "Choose Camera APP" opens
 * (6) From the available Camera Apps choose "OpenCamera"
