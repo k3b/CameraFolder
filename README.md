@@ -8,8 +8,7 @@ The app is super tiny: 0.16 MB
 
 ## Example usecase:
 
-Inside the drawing app [Simple Draw](https://github.com/SimpleMobileTools/Simple-Draw) 
-"open" a photo from [Open Camera](https://f-droid.org/en/packages/net.sourceforge.opencamera) app.
+From the drawing app [Simple Draw](https://github.com/SimpleMobileTools/Simple-Draw) we will "open" a photo from the [Open Camera](https://f-droid.org/en/packages/net.sourceforge.opencamera) app.
 
 ![](https://github.com/k3b/CameraFolder/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1-workflow.png)
 
