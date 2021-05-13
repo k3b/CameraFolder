@@ -1,29 +1,27 @@
 # ![](https://github.com/k3b/CameraFolder/raw/master/app/src/main/res/drawable/camera_folder.png) Camera Folder: "Take a Photo from Camera" everywhere where you can open a photo file 
 
-When "Camera Folder" is installed many Android-Apps that can open jpg files can also take a photo from camera.
+When "Camera Folder" is installed, any Android app that can open jpg files can also take a photo from camera.
 
-Note that "Camera Folder" has no userinterface and no starticon of its own.
+Note that "Camera Folder" has no user interface and no start icon of its own.
 
-The app is super tiny: 0,16 MB
+The app is super tiny: 0.16 MB
 
 ## Example usecase:
 
-Inside the drawing app [Simple-Draw](https://github.com/SimpleMobileTools/Simple-Draw) 
-"open" a photo from [Open Camera](https://f-droid.org/en/packages/net.sourceforge.opencamera) app.
+From the drawing app [Simple Draw](https://github.com/SimpleMobileTools/Simple-Draw) we will "open" a photo from the [Open Camera](https://f-droid.org/en/packages/net.sourceforge.opencamera) app.
 
-![](https://github.com/k3b/CameraFolder/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1-workflow.png)
+![](https://github.com/cosify/CameraFolder/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/Workflow-2.png)
 
-* (0) open the app "Simple-Draw"
-* (1) Open Menu
-* (2) Coose "Open file"
-* The Android-System-File-Chooser opens.
-* (3) Choose Hamburger Menu
+* (0) Open the app "Simple Draw"
+* (1) Open the overflow Menu
+* (2) Choose "Open file". The Android System file picker opens.
+* (3) Click the Hamburger menu
 * (4) The Provider View opens
 * (5) In the Provider View choose "Camera Folder"
-* The "Choose Camera APP" opens
-* (6) From the available Camera Apps choose "OpenCamera"
-* (7) Take a Photo with the Camera App and choose "OK" 
-* (8) back again in "Simple-Draw" process the photo.    
+* (6) The Camera picker opens.From the available Camera apps choose "Open Camera" 
+* (Please note that in Android 11 and above the camera picker has been removed and therefore the default camera app will automatically open)
+* (7) Take a photo with "Open Camera" and choose "OK" 
+* (8) You will be back again in "Simple Draw" with the photo you have just taken ready for processing.    
 
 ## Requirements:
 
