@@ -40,6 +40,13 @@ From the drawing app [Simple Draw](https://github.com/SimpleMobileTools/Simple-D
 * "Camera Folder" plugs into the Android-System-File-Chooser that is used by many Android apps.
 * It Translates from ACTION_GET_CONTENT.to MediaStore.ACTION_IMAGE_CAPTURE
  
+### How to compile
+
+In the project root execute on the commandline
+
+       ./gradlew assemble test
+ 
+ 
 ## Privacy
 
 No adds, no usertracking, no internet connection, free open source, available on f-droid
