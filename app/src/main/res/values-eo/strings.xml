@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Camera Folder</string>
+    <string name="label_select_picture">Fari foton de la fotilo</string>
+    <string name="permission_error">Permesoj mankas</string>
+</resources>

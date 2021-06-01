@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Camera Folder</string>
+    <string name="label_select_picture">Сделать фото с камеры</string>
+    <string name="permission_error">Отсутствуют разрешения</string>
+</resources>
