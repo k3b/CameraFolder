@@ -1,0 +1,3 @@
+* Added translations eo, ru
+* #5: android-11 fix: added non default camera apps opencamera, simplecamera
+

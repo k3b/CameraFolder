@@ -23,6 +23,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -36,7 +37,9 @@ import androidx.core.content.FileProvider;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import de.k3b.util.TempFileUtil;
 
@@ -47,6 +50,15 @@ import de.k3b.util.TempFileUtil;
  */
 public class GetDocument2CameraActivity extends Activity {
     private static final String TAG = "k3b.camerafolder";
+
+    private static final String[] AO10_ADDITIONAL_KNOWN_CAMERA_APPS = new String[] {
+            "net.sourceforge.opencamera", // https://sourceforge.net/p/opencamera/code
+            "com.simplemobiletools.camera", // https://github.com/SimpleMobileTools/Simple-Camera
+            "com.flipcamera", // https://bitbucket.org/kingsimmy/frontcamera/src
+            "org.witness.sscphase1", // https://github.com/guardianproject/ObscuraCam
+            "com.lun.chin.aicamera", // https://bitbucket.org/chlun/aicamera
+            "com.lightbox.android.camera" , // https://github.com/lightbox/QuickSnap
+    };
 
     private static final int PERMISSION_CAMERA_REQUEST_CODE = 100;
     static private final int ACTION_REQUEST_IMAGE_CAPTURE = 4;
@@ -93,14 +105,46 @@ public class GetDocument2CameraActivity extends Activity {
     }
 
     private void onRequestPhoto() {
+
         this.resultPhotoUri = createSharedUri();
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE)
                 .putExtra(MediaStore.EXTRA_OUTPUT, this.resultPhotoUri)
                 .putExtra(MediaStore.EXTRA_MEDIA_TITLE, getString(R.string.label_select_picture))
                 .setFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION );
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // Since android 10 (API30) only default camera app is allowed for ACTION_IMAGE_CAPTURE.
+            // You can whitelist other known camera-apps if added via EXTRA_INITIAL_INTENTS.
+            // see https://commonsware.com/blog/2020/08/16/action-image-capture-android-r.html
+            // code inspired by https://gitlab.com/commonsguy/cw-android-r/-/blob/v0.3/CamChooser/src/main/java/com/commonsware/android/r/camchooser/CameraIntent.kt
+            addInitialIntents(intent, AO10_ADDITIONAL_KNOWN_CAMERA_APPS);
+        }
+
         // start the image capture Intent
         startActivityForResult(intent, ACTION_REQUEST_IMAGE_CAPTURE);
+    }
+
+    /**
+     * Since android 10 (API30) only default camera app is allowed for ACTION_IMAGE_CAPTURE.
+     * You can whitelist other known camera-apps if added via EXTRA_INITIAL_INTENTS.
+     * see https://commonsware.com/blog/2020/08/16/action-image-capture-android-r.html
+     * code inspired by https://gitlab.com/commonsguy/cw-android-r/-/blob/v0.3/CamChooser/src/main/java/com/commonsware/android/r/camchooser/CameraIntent.kt
+     */
+    private void addInitialIntents(Intent baseIntent, String... packageIdCandidates) {
+        PackageManager packageManager = this.getPackageManager();
+        List<Intent> whitelist = new ArrayList<>();
+        for (String packageId : packageIdCandidates) {
+            Intent candidate = new Intent(baseIntent).setPackage(packageId);
+            List<ResolveInfo> resolveInfos = packageManager.queryIntentActivities(candidate, 0);
+            if (!resolveInfos.isEmpty()) {
+                Log.i(TAG, "additional known camera app added '" + packageId + "' = " + resolveInfos.get(0));
+                whitelist.add(candidate);
+            }
+        }
+
+        if (!whitelist.isEmpty()) {
+            baseIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, whitelist.toArray(new Intent[0]));
+        }
     }
 
     @Override

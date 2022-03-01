@@ -1,0 +1,1 @@
+Fixed gradle-wrapper (F-Droid-Issue-Bot)
