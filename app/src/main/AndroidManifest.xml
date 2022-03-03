@@ -9,6 +9,14 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"   />
     <uses-permission android:name="android.permission.CAMERA"  />
 
+    <queries>
+        <!-- required since compileSdkVersion 30 to allow asking for other IMAGE_CAPTURE apps.
+         see https://stackoverflow.com/questions/63246442/android-11-r-return-empty-list-when-querying-intent-for-action-image-capture -->
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+
     <application
         android:allowBackup="false"
         android:icon="@drawable/camera_folder"

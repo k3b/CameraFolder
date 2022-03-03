@@ -58,6 +58,8 @@ public class GetDocument2CameraActivity extends Activity {
             "org.witness.sscphase1", // https://github.com/guardianproject/ObscuraCam
             "com.lun.chin.aicamera", // https://bitbucket.org/chlun/aicamera
             "com.lightbox.android.camera" , // https://github.com/lightbox/QuickSnap
+            "com.google.android.GoogleCamera",
+            "tools.photo.hd.camera",
     };
 
     private static final int PERMISSION_CAMERA_REQUEST_CODE = 100;
