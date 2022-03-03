@@ -139,7 +139,7 @@ public class GetDocument2CameraActivity extends Activity {
             Intent candidate = new Intent(baseIntent).setPackage(packageId);
             List<ResolveInfo> resolveInfos = packageManager.queryIntentActivities(candidate, 0);
             if (!resolveInfos.isEmpty()) {
-                Log.i(TAG, "additional known camera app added '" + packageId + "' = " + resolveInfos.get(0));
+                Log.i(TAG, "known camera app added '" + packageId + "' = " + resolveInfos.get(0));
                 whitelist.add(candidate);
             }
         }
