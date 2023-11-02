@@ -8,9 +8,10 @@ android {
         // Android 4.4 (api19)
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 3
-        versionName "1.0.2"
+        versionCode 4
+        versionName "1.0.3"
 
+        // v1.0.3 (4)  translation de
         // v1.0.2 (3)  translations eo, ru; android-11-fix: added non default camera apps opencamera, simplecamera
         // v1.0.1 (2)  Fixed gradle-wrapper (F-Droid-Issue-Bot)
         // v1.0   (1)
