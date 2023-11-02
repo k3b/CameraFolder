@@ -1,16 +1,16 @@
-Sobald "Camera Folder" installiert ist können viele Android-Apps die eine jpg
-Datei üffnen können jezt auch ein Photo mit der Kamera aufnehmen.
+Sobald "Camera Folder" installiert ist können viele Android-Apps, die eine jpg
+Datei öffnen können, jezt auch ein Photo mit der Kamera aufnehmen.
 
-Hinweis: "Camera Folder" hat keine eigene Benutzeroberfläche und kein Program Icon.
+Hinweis: "Camera Folder" hat keine eigene Benutzeroberfläche und kein Programm Icon.
 
-Die anwendung ist nur 0,16 MB gross.
+Die Anwendung ist nur 0,16 MB gross.
 
 Voraussetzungen:
 
 <ul>
 <li>Android-4.4 (api 19) Gerät oder neuer mit eingebauter Kamera.</li>
 <li>Eine installierte Kamera APP (z.b Open Camera)</li>
-<li>Berechtigungen<<ul>
+<li>Berechtigungen<ul>
      <li>CAMERA um eine Kamra App zu Bitten, ein Foto aufzunemnen</li>
      <li>WRITE_EXTERNAL_STORAGE um das Foto zu sepeichern</li>
      </ul>

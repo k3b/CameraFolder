@@ -1,1 +1,1 @@
-Everywhere where you can choose from jpg files you can also take and process a photo from camera.
+Allows all jpg apps to take a photo from the camera and process it.
